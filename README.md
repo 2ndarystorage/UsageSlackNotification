@@ -74,3 +74,17 @@ Windowsの場合、環境変数にSLACK_WEBHOOK_URLという名前でSlackのWeb
 
 ## Completion Status
 - Usable: Core monitoring and notification flow is implemented in `app.py`, but behavior (auth-protected pages, popup blockers, Slack setup) depends on environment and is not verified here.
+
+## Program Summary
+- Streamlit-based URL monitor that fetches each page, hashes content, and reports changes on a timed reload cycle.
+- Sends Slack notifications on startup and on detected updates; optional desktop notifications via `plyer`.
+- Provides per-URL “open in new tab” buttons and auto-opens URLs on first load.
+
+## How to Use
+- Install dependencies: `pip install streamlit requests plyer`
+- Set `SLACK_WEBHOOK_URL` (or enter it in the UI), then run: `streamlit run app.py`
+- Adjust interval, enter up to three URLs, and keep the app open to monitor.
+- Not verified.
+
+## Completion Status
+- Usable: Core monitoring, Slack notification, and basic UI flows are in place, but behavior depends on site access/auth and client-side popup/auto-reload constraints; not verified.
